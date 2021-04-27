@@ -1,0 +1,40 @@
+Sukurti Todo aplikacija
+kiekvienas todo turi tureti id, title, done, timeStamp
+// todo sarasa turetu buti masyvas kuriame yra objektai 
+
+// reikalingi metodai arba funkcijos 
+// 1. prideti nauja todo,
+// 2. istrinti todo 
+// 3. editinti todo keiciasi timeStamp
+// 4. padaryti todo DONE (check uncheck)
+
+// 5. picture todo 
+// toks pat kaip papras todo, bet galima issaugoti paveikslelio url 
+{id, title, done, imgUrl}
+
+
+[
+    {id: sdad, title: "print bills", done: false, timeStamp: 2021-19-12}
+    {id, title, done, timeStamp}
+    {id, title, done, timeStamp}
+    {id, title, done, timeStamp}
+]
+
+
+// 6. sukurti skaitliuka, kuris rodo kiek turime todo is viso ir kiek pazymetu done PVZ 4/10
+
+// 7. sukurti buda matyti tik pabaigtus(pazymetus varnele) todo
+
+// 8. sukrti buda matyti tik todo kurie yra paveiksliuko tipo 
+
+// 9. sukrti buda matyti tik todo kurie yra paprasto tipo 
+
+// 10. sukurti ilgo teksto tipo Todo. Jis turi papildoma longText savybe
+// {id, title, done, timeStamp, longText}
+// todo toks tampa jei tekstas ilgesnis nei 80 simboliu automatiskai 
+
+// 11. pasirasyti graziai atrodanti html ir css statini savo todo aplikacijoje 
+// tureti omeny kad bus todo kurie yra tik tekstas, su paveiklseliu ir ilgo texto todo
+// juos bus galima istrinti ir pazymeti ar nuzymeti 
+// dizaino pvz galit pasieiskoti internete
+
