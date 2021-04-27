@@ -13,15 +13,25 @@ let todosDataArr = [
   "Do pushups",
   ["got to this mountain", "mountain.jpg"],
   "Read a book",
-  "Go for shoppig",
-  ["find this pole", "south poole.jpg"],
+  "Go for shoppig", // Todo
+  ["find this pole", "south poole.jpg"], // TodoPicture
   "call Jane",
 ];
 todosDataArr.forEach((todoData) => {
-  // kai todo yra tekstas
-  st.addTodo(new Todo(todoData));
-  // kai todo yra masyvas
-  st.addTodo(new TodoPicture(todoData));
+  if (typeof todoData === "string") {
+    // kai todo yra tekstas
+    st.addTodo(new Todo(todoData));
+    return;
+  }
+  if (Array.isArray(todoData)) {
+    // kai todo yra masyvas
+    st.addTodo(new TodoPicture(...todoData));
+    // st.addTodo(new TodoPicture(todoData[0], todoData[1]));
+    return;
+  }
+  throw new Error("not a valid input");
 });
+
+// uzbaikim keleta todo (done, checked)
 
 console.log(st);
