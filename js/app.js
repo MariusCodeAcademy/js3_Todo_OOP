@@ -19,4 +19,5 @@ st.deleteTodo("t_3");
 // st.deleteTodo("nera");
 st.addTodo(new Todo("Buy milk"));
 st.editTodo("t_5", "Go to park");
+st.checkAsDone("t_1");
 console.log(st);

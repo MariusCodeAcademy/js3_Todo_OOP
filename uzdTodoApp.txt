@@ -13,8 +13,8 @@ kiekvienas todo turi tureti id, title, done, timeStamp
 {id, title, done, imgUrl}
 
 
-[
-    {id: sdad, title: "print bills", done: false, timeStamp: 2021-19-12}
+[ State klase 
+    {id: sdad, title: "print bills", done: false, timeStamp: 2021-19-12} class Todo
     {id, title, done, timeStamp}
     {id, title, done, timeStamp}
     {id, title, done, timeStamp}

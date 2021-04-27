@@ -10,4 +10,7 @@ export default class Todo {
   editTitle(newTitle) {
     this.title = newTitle;
   }
+  markDone() {
+    this.done = true;
+  }
 }

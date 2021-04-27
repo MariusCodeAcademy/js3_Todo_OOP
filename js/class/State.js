@@ -5,6 +5,21 @@ export default class State {
     this.currentTodos = [];
   }
 
+  // pagalbiniai metodai
+  /**
+   * patikrinam ar turime toki id ar ne
+   * @param {string} id
+   * @returns boolean
+   */
+  doWeHaveThisId(id) {
+    // ar turim toki id kurio ieskom
+    let todoIdsArr = this.currentTodos.map((todoObj) => todoObj.id);
+    if (!todoIdsArr.includes(id)) {
+      return false;
+    }
+    return true;
+  }
+
   addTodo(todo) {
     if (todo instanceof Todo) {
       this.currentTodos.push(todo);
@@ -13,8 +28,7 @@ export default class State {
 
   deleteTodo(id) {
     // ar turim toki id kurio ieskom
-    let todoIdsArr = this.currentTodos.map((todoObj) => todoObj.id);
-    if (!todoIdsArr.includes(id)) {
+    if (!this.doWeHaveThisId(id)) {
       throw new Error("This todo not found. Delete failed");
     }
     this.currentTodos = this.currentTodos.filter((todoObj) => id !== todoObj.id);
@@ -22,13 +36,21 @@ export default class State {
   }
 
   editTodo(id, newTitle) {
-    let todoIdsArr = this.currentTodos.map((todoObj) => todoObj.id);
-    if (!todoIdsArr.includes(id)) {
+    if (!this.doWeHaveThisId(id)) {
       throw new Error("This todo not found. Edit failed");
     }
     let todoToEdit = this.currentTodos.find((todoObj) => id === todoObj.id);
-    console.log("todoToEdit", todoToEdit);
+    console.log(`Title: "${todoToEdit.title}" was renamed to "${newTitle}"`);
     todoToEdit.editTitle(newTitle);
-    console.log("todoToEdit", todoToEdit);
+  }
+
+  checkAsDone(id) {
+    if (!this.doWeHaveThisId(id)) {
+      throw new Error("This todo not found. Mark done failed");
+    }
+    let todoToToBeChecked = this.currentTodos.find((todoObj) => id === todoObj.id);
+    console.log("suradom pacheckinti", todoToToBeChecked);
+    todoToToBeChecked.markDone();
+    console.log("suradom pacheckinom", todoToToBeChecked);
   }
 }
