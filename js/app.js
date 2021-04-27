@@ -33,5 +33,7 @@ todosDataArr.forEach((todoData) => {
 });
 
 // uzbaikim keleta todo (done, checked);
-
+st.checkAsDone("t_2");
+st.checkAsDone("t_4");
+st.checkAsDone("t_5");
 console.log(st);

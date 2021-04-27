@@ -51,4 +51,5 @@ export default class State {
     let todoToToBeChecked = this.currentTodos.find((todoObj) => id === todoObj.id);
     todoToToBeChecked.markDone();
   }
+  get skaitliukas() {}
 }

@@ -27,7 +27,7 @@ kiekvienas todo turi tureti id, title, done, timeStamp
 
 // 8. sukrti buda matyti tik todo kurie yra paveiksliuko tipo 
 
-// 9. sukrti buda matyti tik todo kurie yra paprasto tipo 
+// 9. sukurti buda matyti tik todo kurie yra paprasto tipo 
 
 // 10. sukurti ilgo teksto tipo Todo. Jis turi papildoma longText savybe
 // {id, title, done, timeStamp, longText}
@@ -38,3 +38,6 @@ kiekvienas todo turi tureti id, title, done, timeStamp
 // juos bus galima istrinti ir pazymeti ar nuzymeti 
 // dizaino pvz galit pasieiskoti internete
 
+
+// 12. sukurti buda ieskoti todo pagal uzduota sring
+.search('buy') // grazina visus todo kuriu title yra zodis 'buy'
