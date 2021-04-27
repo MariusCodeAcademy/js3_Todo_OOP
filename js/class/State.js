@@ -49,8 +49,6 @@ export default class State {
       throw new Error("This todo not found. Mark done failed");
     }
     let todoToToBeChecked = this.currentTodos.find((todoObj) => id === todoObj.id);
-    console.log("suradom pacheckinti", todoToToBeChecked);
     todoToToBeChecked.markDone();
-    console.log("suradom pacheckinom", todoToToBeChecked);
   }
 }
