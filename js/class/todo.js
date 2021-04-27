@@ -7,4 +7,7 @@ export default class Todo {
     this.done = false;
     this.timeStamp = new Date();
   }
+  editTitle(newTitle) {
+    this.title = newTitle;
+  }
 }
