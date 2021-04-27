@@ -51,5 +51,15 @@ export default class State {
     let todoToToBeChecked = this.currentTodos.find((todoObj) => id === todoObj.id);
     todoToToBeChecked.markDone();
   }
-  get skaitliukas() {}
+  get skaitliukas() {
+    // reikia gauti kiek is viso yra todo el
+    let visoTodosYra = this.currentTodos.length;
+    // reikia gauti kiek ju yra pazymeti kaip baigti(done)
+    let uzbaigtiTodo = this.doneTodos.length;
+    // grazinti ir atspausdinti reiksme per slash '3 / 7'
+    console.log(`${uzbaigtiTodo} / ${visoTodosYra}`);
+  }
+  get doneTodos() {
+    return this.currentTodos.filter((todoObj) => todoObj.done);
+  }
 }

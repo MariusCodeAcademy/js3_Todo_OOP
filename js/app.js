@@ -37,3 +37,5 @@ st.checkAsDone("t_2");
 st.checkAsDone("t_4");
 st.checkAsDone("t_5");
 console.log(st);
+st.skaitliukas;
+// console.log(st.currentTodos[1].done);
