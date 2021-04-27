@@ -32,6 +32,6 @@ todosDataArr.forEach((todoData) => {
   throw new Error("not a valid input");
 });
 
-// uzbaikim keleta todo (done, checked)
+// uzbaikim keleta todo (done, checked);
 
 console.log(st);
