@@ -5,6 +5,7 @@ import Todo from "./class/Todo.js";
 import TodoPicture from "./class/TodoPicture.js";
 import State from "./class/State.js";
 
+window.kkk = "yes";
 // state - bus laikoma dabartine todo elementu busena ir pagal ja bus atvaizduojamas html
 let st = new State();
 
@@ -16,6 +17,7 @@ let todosDataArr = [
   "Go for shoppig", // Todo
   ["find this pole", "south poole.jpg"], // TodoPicture
   "call Jane",
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sint cumque minima commodi a optio, illo fuga voluptates dolorum corrupti! Asperiores temporibus soluta accusamus explicabo, vitae aliquid esse qui velit itaque earum necessitatibus voluptates incidunt a in maxime non fugit natus corrupti, ipsa dolore deserunt porro culpa praesentium eligendi? Labore.",
 ];
 todosDataArr.forEach((todoData) => {
   if (typeof todoData === "string") {
@@ -37,5 +39,17 @@ st.checkAsDone("t_2");
 st.checkAsDone("t_4");
 st.checkAsDone("t_5");
 console.log(st);
+
+console.log("pic todos only", st.pictureOnlyTodo);
+console.log("simple todos only", st.simpleTodosOnly);
+
 st.skaitliukas;
-// console.log(st.currentTodos[1].done);
+window.rez = st;
+console.log(st.currentTodos[1].title);
+
+window.boom = function () {
+  window.rez.addTodo(new Todo("does it"));
+  console.log(window.rez.currentTodos);
+};
+
+window.blue = "green";

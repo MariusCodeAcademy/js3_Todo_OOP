@@ -1,4 +1,5 @@
 import Todo from "./Todo.js";
+import TodoPicture from "./TodoPicture.js";
 
 export default class State {
   constructor() {
@@ -58,8 +59,18 @@ export default class State {
     let uzbaigtiTodo = this.doneTodos.length;
     // grazinti ir atspausdinti reiksme per slash '3 / 7'
     console.log(`${uzbaigtiTodo} / ${visoTodosYra}`);
+    return `${uzbaigtiTodo} / ${visoTodosYra}`;
   }
   get doneTodos() {
     return this.currentTodos.filter((todoObj) => todoObj.done);
+  }
+  // 8. sukurti buda matyti tik todo kurie yra paveiksliuko tipo
+  get pictureOnlyTodo() {
+    return this.currentTodos.filter((todoObj) => todoObj instanceof TodoPicture);
+    // return this.currentTodos.filter((todoObj) => todoObj.imgUrl);
+  }
+  // Jei turesim kitu tipu todo reikia sita metoda atnaujinti
+  get simpleTodosOnly() {
+    return this.currentTodos.filter((todoObj) => !(todoObj instanceof TodoPicture));
   }
 }
