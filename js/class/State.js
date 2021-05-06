@@ -48,13 +48,20 @@ export default class State {
     todoToEdit.editTitle(newTitle);
   }
 
-  makeTodoEditModeOn(id) {
+  makeTodoEditModeOn(id, editedTitle) {
     if (!this.doWeHaveThisId(id)) {
       throw new Error("This todo not found. Edit failed");
     }
     let todoToToggleEditMode = this.currentTodos.find((todoObj) => id === todoObj.id);
+    // tuo atveju kai pereinam is edit mode i paprastas rezma
+    if (todoToToggleEditMode.editMode === true) {
+      console.log("is edit i paprasta");
+      // mes norim paimti ivesties lauko reiksme ir pakeisti title
+      todoToToggleEditMode.title = editedTitle;
+    }
     todoToToggleEditMode.editMode = !todoToToggleEditMode.editMode;
     // console.log("todoToToggleEditMode", todoToToggleEditMode);
+
     this.render();
   }
 

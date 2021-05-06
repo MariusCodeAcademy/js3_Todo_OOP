@@ -14,7 +14,7 @@ export default class Ui {
     // ar ijungtas edit rezimas
     let inputOrSpan = `<span class="text">${title}</span>`;
     if (editMode === true) {
-      inputOrSpan = `<input type="text" value="${title}" />`;
+      inputOrSpan = `<input type="text" class='edit-field' value="${title}" />`;
     }
 
     let liHtml = `

@@ -48,8 +48,21 @@ Ui.mainUlListEl.addEventListener("click", function (event) {
     // jei paspaudem and edit
     if (currentElClicked.classList.contains("edit-icon")) {
       console.log("edit pressed");
-      // Gauti dabartine reiksme
-      st.makeTodoEditModeOn(liIdAntKurioPaspaudem);
+
+      // gauti nauja title reiksme
+      // currentElClicked.parentElementSibling.value
+      let naujaTodoReiksme;
+
+      // kad isvengti klaidos pasitikrinam ar turim reiksme ir tik tada vygdom
+      // let arYraInputEl = currentElClicked.parentElement.querySelector("input");
+      // if (arYraInputEl) naujaTodoReiksme = arYraInputEl.value;
+
+      // ties klaustuku js pasitikrina ar gavo reiksme jei negavo tai kodo nevygdo toliau ir mes
+      // ngaunam klaidos
+      naujaTodoReiksme = currentElClicked.parentElement.querySelector("input")?.value;
+      // console.log("nauja", naujaTodoReiksme);
+
+      st.makeTodoEditModeOn(liIdAntKurioPaspaudem, naujaTodoReiksme);
     }
   } // paspaudem ant iconeles IFAS END
 });
