@@ -51,7 +51,7 @@ export default class State {
       throw new Error("This todo not found. Mark done failed");
     }
     let todoToToBeChecked = this.currentTodos.find((todoObj) => id === todoObj.id);
-    todoToToBeChecked.markDone();
+    todoToToBeChecked.toggleDoneState();
     this.render();
   }
   get skaitliukas() {
@@ -80,6 +80,6 @@ export default class State {
    *
    */
   render() {
-    Ui.renderList(this.currentTodos);
+    Ui.apendLiElementsToList(this.currentTodos);
   }
 }

@@ -11,8 +11,8 @@ export default class Todo {
   editTitle(newTitle) {
     this.title = newTitle;
   }
-  markDone() {
-    this.done = true;
+  toggleDoneState() {
+    this.done = !this.done;
   }
   set title(val) {
     // jei tekstas ilgesntis nei 80 simb

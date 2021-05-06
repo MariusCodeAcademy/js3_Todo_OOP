@@ -24,8 +24,9 @@ export default class Ui {
 
   /**
    * Generates li elements on the page
+   * kviesti sita metoda visada kai kazkas vizualiai turetu pasikeisti musu HTML Ui
    */
-  static renderList(todosArr) {
+  static apendLiElementsToList(todosArr) {
     Ui.mainUlListEl.innerHTML = "";
     todosArr.forEach((todoObj) => {
       Ui.mainUlListEl.innerHTML += Ui.makeLi(todoObj);
