@@ -45,5 +45,9 @@ Ui.mainUlListEl.addEventListener("click", function (event) {
       // tai trinam el
       st.deleteTodo(liIdAntKurioPaspaudem);
     }
+    // jei paspaudem and edit
+    if (currentElClicked.classList.contains("edit-icon")) {
+      console.log("edit pressed");
+    }
   } // paspaudem ant iconeles IFAS END
 });
