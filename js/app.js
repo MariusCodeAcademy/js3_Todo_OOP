@@ -48,6 +48,8 @@ Ui.mainUlListEl.addEventListener("click", function (event) {
     // jei paspaudem and edit
     if (currentElClicked.classList.contains("edit-icon")) {
       console.log("edit pressed");
+      // Gauti dabartine reiksme
+      st.makeTodoEditModeOn(liIdAntKurioPaspaudem);
     }
   } // paspaudem ant iconeles IFAS END
 });

@@ -7,6 +7,8 @@ export default class Todo {
     this.title = title;
     this.done = false;
     this.timeStamp = new Date();
+    // jei si reiksme yra true reikskia mes ta todo el redaguojam
+    this.editMode = false;
   }
   editTitle(newTitle) {
     this.title = newTitle;

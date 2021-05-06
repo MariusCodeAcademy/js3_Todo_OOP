@@ -5,6 +5,7 @@ import Ui from "./Ui.js";
 export default class State {
   constructor() {
     this.currentTodos = [];
+    this.currentTodo = null;
   }
 
   // pagalbiniai metodai
@@ -45,6 +46,16 @@ export default class State {
     let todoToEdit = this.currentTodos.find((todoObj) => id === todoObj.id);
     console.log(`Title: "${todoToEdit.title}" was renamed to "${newTitle}"`);
     todoToEdit.editTitle(newTitle);
+  }
+
+  makeTodoEditModeOn(id) {
+    if (!this.doWeHaveThisId(id)) {
+      throw new Error("This todo not found. Edit failed");
+    }
+    let todoToToggleEditMode = this.currentTodos.find((todoObj) => id === todoObj.id);
+    todoToToggleEditMode.editMode = !todoToToggleEditMode.editMode;
+    // console.log("todoToToggleEditMode", todoToToggleEditMode);
+    this.render();
   }
 
   checkAsDone(id) {
