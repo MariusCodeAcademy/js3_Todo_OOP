@@ -20,7 +20,7 @@ st.checkAsDone("t_2");
 st.checkAsDone("t_3");
 const newEl = Ui.makeLi(st.currentTodos[0]);
 
-console.log(newEl);
+// console.log(newEl);
 
 st.render();
 
@@ -28,10 +28,22 @@ Ui.mainUlListEl.addEventListener("click", function (event) {
   const currentElClicked = event.target;
   // console.log(event.target);
 
-  if (currentElClicked.classList.contains("make-done")) {
-    console.log("make done click");
-    // gaunam id to li elemento ant kurio paspaudem
-    const idOfCurrentEl = currentElClicked.parentElement.dataset.id;
-    st.checkAsDone(idOfCurrentEl);
-  }
+  // pasitikrinam ar paspaudem ant ikonos elemento
+  if (currentElClicked.tagName === "I") {
+    console.log("paspaudem ikocna");
+    // jei taip tai issisaugom li el id
+    const liIdAntKurioPaspaudem = currentElClicked.parentElement.dataset.id;
+
+    // tikrinam ar paspaudem make done iconele
+    // check uncheck method
+    if (currentElClicked.classList.contains("make-done")) {
+      // jei taip tai check unckek el
+      st.checkAsDone(liIdAntKurioPaspaudem);
+    }
+    // jei paspaudem ant siukslines
+    if (currentElClicked.classList.contains("delete-icon")) {
+      // tai trinam el
+      st.deleteTodo(liIdAntKurioPaspaudem);
+    }
+  } // paspaudem ant iconeles IFAS END
 });

@@ -35,6 +35,7 @@ export default class State {
     }
     this.currentTodos = this.currentTodos.filter((todoObj) => id !== todoObj.id);
     console.log("todo", id, "was deleted");
+    this.render();
   }
 
   editTodo(id, newTitle) {
