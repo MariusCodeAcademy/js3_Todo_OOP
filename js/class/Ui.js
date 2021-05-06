@@ -2,7 +2,7 @@ export default class Ui {
   // nuorodos i html el
   static mainUlListEl = document.getElementById("list");
 
-  static makeLi({ title, done }) {
+  static makeLi({ title, done, id }) {
     // clases jei todo nepazymetas kaip done
     let itemClass = "",
       checkClass = "fa-circle-thin";
@@ -12,7 +12,7 @@ export default class Ui {
       checkClass = "fa-check-circle";
     }
     let liHtml = `
-        <li class="item ${itemClass}">
+        <li class="item ${itemClass}" data-id=${id} >
             <i class="fa ${checkClass} make-done" aria-hidden="true"></i>
             <span class="text">${title}</span>
             <i class="fa fa-pencil edit-icon" aria-hidden="true"></i>

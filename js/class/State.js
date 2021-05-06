@@ -52,6 +52,7 @@ export default class State {
     }
     let todoToToBeChecked = this.currentTodos.find((todoObj) => id === todoObj.id);
     todoToToBeChecked.markDone();
+    this.render();
   }
   get skaitliukas() {
     // reikia gauti kiek is viso yra todo el
