@@ -22,4 +22,4 @@ const newEl = Ui.makeLi(st.currentTodos[0]);
 
 console.log(newEl);
 
-Ui.render(st.currentTodos);
+st.render();

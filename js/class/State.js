@@ -1,5 +1,6 @@
 import Todo from "./Todo.js";
 import TodoPicture from "./TodoPicture.js";
+import Ui from "./Ui.js";
 
 export default class State {
   constructor() {
@@ -72,5 +73,12 @@ export default class State {
   // Jei turesim kitu tipu todo reikia sita metoda atnaujinti
   get simpleTodosOnly() {
     return this.currentTodos.filter((todoObj) => !(todoObj instanceof TodoPicture));
+  }
+  /**
+   * Metodas generuoja galutini saraso vaizda
+   *
+   */
+  render() {
+    Ui.renderList(this.currentTodos);
   }
 }

@@ -3,11 +3,17 @@ export default class Ui {
   static mainUlListEl = document.getElementById("list");
 
   static makeLi({ title, done }) {
+    // clases jei todo nepazymetas kaip done
+    let itemClass = "",
+      checkClass = "fa-circle-thin";
+    if (done === true) {
+      // clases kai todo pazymetas kaip done
+      itemClass = "line-through";
+      checkClass = "fa-check-circle";
+    }
     let liHtml = `
-        <li class="item ${done === true ? "line-through" : ""}">
-            <i class="fa ${
-              done === true ? "fa-check-circle" : "fa-circle-thin"
-            } make-done" aria-hidden="true"></i>
+        <li class="item ${itemClass}">
+            <i class="fa ${checkClass} make-done" aria-hidden="true"></i>
             <span class="text">${title}</span>
             <i class="fa fa-pencil edit-icon" aria-hidden="true"></i>
             <i class="fa fa-trash delete-icon" aria-hidden="true"></i>
@@ -19,7 +25,7 @@ export default class Ui {
   /**
    * Generates li elements on the page
    */
-  static render(todosArr) {
+  static renderList(todosArr) {
     Ui.mainUlListEl.innerHTML = "";
     todosArr.forEach((todoObj) => {
       Ui.mainUlListEl.innerHTML += Ui.makeLi(todoObj);
