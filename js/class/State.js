@@ -1,3 +1,4 @@
+import Store from "./Store.js";
 import Todo from "./Todo.js";
 import TodoPicture from "./TodoPicture.js";
 import Ui from "./Ui.js";
@@ -86,7 +87,7 @@ export default class State {
     // reikia gauti kiek ju yra pazymeti kaip baigti(done)
     let uzbaigtiTodo = this.doneTodos.length;
     // grazinti ir atspausdinti reiksme per slash '3 / 7'
-    console.log(`${uzbaigtiTodo} / ${visoTodosYra}`);
+    // console.log(`${uzbaigtiTodo} / ${visoTodosYra}`);
     return `${uzbaigtiTodo} / ${visoTodosYra}`;
   }
   get doneTodos() {
@@ -106,7 +107,9 @@ export default class State {
    *
    */
   render() {
+    // debugger;
     Ui.apendLiElementsToList(this.currentTodos);
     Ui.counterEl.textContent = this.skaitliukas;
+    Store.save(this.currentTodos);
   }
 }

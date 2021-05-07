@@ -5,20 +5,25 @@ import Todo from "./class/Todo.js";
 import TodoPicture from "./class/TodoPicture.js";
 import State from "./class/State.js";
 import Ui from "./class/Ui.js";
+import Store from "./class/Store.js";
 
 // state - bus laikoma dabartine todo elementu busena ir pagal ja bus atvaizduojamas html
 let st = new State();
 
-const ourTodoData = ["Drink coffe", "Go to park", "walk a dog", "Go to see Stars"];
+st.currentTodos = Store.loadTodoData();
+st.render();
+// pasitikrinti ar turim kazka Store issaugota ir jei turim tai naudosim tuos duomenis
 
-ourTodoData.forEach((todoTitle) => {
-  st.addTodo(new Todo(todoTitle));
-});
+// const ourTodoData = ["Drink coffe", "Go to park", "walk a dog", "Go to see Stars"];
+
+// ourTodoData.forEach((todoTitle) => {
+//   st.addTodo(new Todo(todoTitle));
+// });
 
 console.log(st.currentTodos);
-st.checkAsDone("t_2");
-st.checkAsDone("t_3");
-const newEl = Ui.makeLi(st.currentTodos[0]);
+// st.checkAsDone("t_2");
+// st.checkAsDone("t_3");
+// const newEl = Ui.makeLi(st.currentTodos[0]);
 
 // console.log(newEl);
 
@@ -30,7 +35,7 @@ Ui.mainUlListEl.addEventListener("click", function (event) {
 
   // pasitikrinam ar paspaudem ant ikonos elemento
   if (currentElClicked.tagName === "I") {
-    console.log("paspaudem ikocna");
+    // console.log("paspaudem ikocna");
     // jei taip tai issisaugom li el id
     const liIdAntKurioPaspaudem = currentElClicked.parentElement.dataset.id;
 
@@ -90,3 +95,30 @@ Ui.resetBtn.addEventListener("click", function () {
 // Ui.counterEl.textContent = st.skaitliukas;
 
 // 3 prideti prie todo data ir laika
+
+// local storage test
+// let num1 = 50;
+// irasom i narsykles atminti kaip key: value poras
+// localStorage.setItem("musuSkaicius", num1);
+
+// gauti reiksmes is narsykles atminties
+let gavom = localStorage.getItem("musuSkaicius");
+// console.log("gavom", gavom);
+// console.log("gavom tipas", typeof gavom);
+
+// ikeliam masyva i localStorge
+// localStorage.setItem("todoMas", ourTodoData);
+// console.log("atgal gaunam", localStorage.getItem("todoMas"));
+
+// norint issauti objekta arba masyva mums pirmiausia reikia ji paversti JSON tipo
+// duomenimis
+// kaip paversti objekta i Json
+// JSON.stringify(obj)
+// console.log(st.currentTodos);
+// // pavercia objekta i json formata
+// let ourTodoDataJson = JSON.stringify(st.currentTodos);
+// console.log(ourTodoDataJson);
+
+// // atversti duomenis atgal i s json i obj
+// let dataFromJson = JSON.parse(ourTodoDataJson);
+// console.log("parsinti duomenys", dataFromJson);
