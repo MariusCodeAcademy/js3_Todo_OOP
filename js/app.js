@@ -66,3 +66,7 @@ Ui.mainUlListEl.addEventListener("click", function (event) {
     }
   } // paspaudem ant iconeles IFAS END
 });
+
+Ui.addTodoBtn.addEventListener("click", function () {
+  Ui.addTodoFromInput(st);
+});

@@ -1,6 +1,9 @@
+import Todo from "./Todo.js";
 export default class Ui {
   // nuorodos i html el
   static mainUlListEl = document.getElementById("list");
+  static addTodoBtn = document.getElementById("add-todo-btn");
+  static todoInputEl = document.getElementById("input");
 
   static makeLi({ title, done, id, editMode }) {
     // clases jei todo nepazymetas kaip done
@@ -37,5 +40,15 @@ export default class Ui {
     todosArr.forEach((todoObj) => {
       Ui.mainUlListEl.innerHTML += Ui.makeLi(todoObj);
     });
+  }
+
+  static addTodoFromInput(st) {
+    // paimti input reiksme
+    let newTodoReiksme = Ui.todoInputEl.value;
+    if (newTodoReiksme !== "") {
+      // is su ja iskviesti state metoda addTodo
+      st.addTodo(new Todo(newTodoReiksme));
+      Ui.todoInputEl.value = "";
+    }
   }
 }
