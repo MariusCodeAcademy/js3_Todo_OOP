@@ -81,4 +81,12 @@ Ui.todoInputEl.addEventListener("keypress", function (event) {
   }
 });
 
-st.resetTodos();
+// padaryti kad paspauus refresh ikona istitrintu visi todo
+Ui.resetBtn.addEventListener("click", function () {
+  st.resetTodos();
+});
+
+// 2 prideti padarytu ir nepadarytu todo skaitliuka i header
+// Ui.counterEl.textContent = st.skaitliukas;
+
+// 3 prideti prie todo data ir laika

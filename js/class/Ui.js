@@ -4,6 +4,8 @@ export default class Ui {
   static mainUlListEl = document.getElementById("list");
   static addTodoBtn = document.getElementById("add-todo-btn");
   static todoInputEl = document.getElementById("input");
+  static resetBtn = document.getElementById("reset");
+  static counterEl = document.querySelector(".done-todo-count");
 
   static makeLi({ title, done, id, editMode }) {
     // clases jei todo nepazymetas kaip done

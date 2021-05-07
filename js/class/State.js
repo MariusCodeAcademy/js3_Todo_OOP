@@ -26,6 +26,7 @@ export default class State {
   resetTodos() {
     this.currentTodos = [];
     this.render();
+    Todo.todoCount = 0;
   }
 
   addTodo(todo) {
@@ -106,5 +107,6 @@ export default class State {
    */
   render() {
     Ui.apendLiElementsToList(this.currentTodos);
+    Ui.counterEl.textContent = this.skaitliukas;
   }
 }
