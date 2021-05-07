@@ -1,11 +1,11 @@
 export default class Todo {
   static todoCount = 0;
   _title = "";
-  constructor(title) {
+  constructor(title, done = false) {
     //id, title, done, timeStamp
     this.id = "t_" + ++Todo.todoCount;
     this.title = title;
-    this.done = false;
+    this.done = done;
     this.timeStamp = new Date();
     // jei si reiksme yra true reikskia mes ta todo el redaguojam
     this.editMode = false;

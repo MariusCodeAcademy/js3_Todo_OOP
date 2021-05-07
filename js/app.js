@@ -10,16 +10,6 @@ import Store from "./class/Store.js";
 // state - bus laikoma dabartine todo elementu busena ir pagal ja bus atvaizduojamas html
 let st = new State();
 
-st.currentTodos = Store.loadTodoData();
-st.render();
-// pasitikrinti ar turim kazka Store issaugota ir jei turim tai naudosim tuos duomenis
-
-// const ourTodoData = ["Drink coffe", "Go to park", "walk a dog", "Go to see Stars"];
-
-// ourTodoData.forEach((todoTitle) => {
-//   st.addTodo(new Todo(todoTitle));
-// });
-
 console.log(st.currentTodos);
 // st.checkAsDone("t_2");
 // st.checkAsDone("t_3");

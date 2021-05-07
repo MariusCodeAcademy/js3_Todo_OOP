@@ -38,6 +38,7 @@ export default class Ui {
    * kviesti sita metoda visada kai kazkas vizualiai turetu pasikeisti musu HTML Ui
    */
   static apendLiElementsToList(todosArr) {
+    // debugger;
     Ui.mainUlListEl.innerHTML = "";
     todosArr.forEach((todoObj) => {
       Ui.mainUlListEl.innerHTML += Ui.makeLi(todoObj);

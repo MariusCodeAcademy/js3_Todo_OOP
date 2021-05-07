@@ -7,6 +7,14 @@ export default class State {
   constructor() {
     this.currentTodos = [];
     this.currentTodo = null;
+    this.loadTodosFromStore();
+  }
+
+  loadTodosFromStore() {
+    const objFromStore = Store.loadTodoData();
+    objFromStore.forEach((obj) => {
+      this.addTodo(new Todo(obj._title, obj.done));
+    });
   }
 
   // pagalbiniai metodai

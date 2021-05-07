@@ -10,8 +10,8 @@ export default class Store {
   static loadTodoData() {
     const dataFromLocalStore = localStorage.getItem("todoData");
     // jei nera duomenu nutraukiam funkcija
-    if (dataFromLocalStore === null) return;
-    console.log(dataFromLocalStore);
+    if (dataFromLocalStore === null) return [];
+    // console.log(dataFromLocalStore);
     const objFromStoreJsonData = JSON.parse(dataFromLocalStore);
     // console.log("objFromStoreJsonData", objFromStoreJsonData);
     return objFromStoreJsonData;
