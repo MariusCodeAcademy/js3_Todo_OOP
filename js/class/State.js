@@ -27,6 +27,7 @@ export default class State {
     if (todo instanceof Todo) {
       this.currentTodos.push(todo);
     } else throw new Error("not and instance of todo.");
+    this.render();
   }
 
   deleteTodo(id) {
