@@ -1,11 +1,8 @@
 "use strict"; // here we go again
 console.log("app.js");
 
-import Todo from "./class/Todo.js";
-import TodoPicture from "./class/TodoPicture.js";
 import State from "./class/State.js";
 import Ui from "./class/Ui.js";
-import Store from "./class/Store.js";
 
 // state - bus laikoma dabartine todo elementu busena ir pagal ja bus atvaizduojamas html
 let st = new State();
@@ -92,7 +89,7 @@ Ui.resetBtn.addEventListener("click", function () {
 // localStorage.setItem("musuSkaicius", num1);
 
 // gauti reiksmes is narsykles atminties
-let gavom = localStorage.getItem("musuSkaicius");
+// let gavom = localStorage.getItem("musuSkaicius");
 // console.log("gavom", gavom);
 // console.log("gavom tipas", typeof gavom);
 
