@@ -70,3 +70,15 @@ Ui.mainUlListEl.addEventListener("click", function (event) {
 Ui.addTodoBtn.addEventListener("click", function () {
   Ui.addTodoFromInput(st);
 });
+
+// padaryti kad paspaudues enter ikeltumem nauja todo
+Ui.todoInputEl.addEventListener("keypress", function (event) {
+  // patikrinti ar paspausta enter
+  // console.log(event.key);
+  if (event.key === "Enter") {
+    // jei taip tai ikelti todo
+    Ui.addTodoFromInput(st);
+  }
+});
+
+st.resetTodos();

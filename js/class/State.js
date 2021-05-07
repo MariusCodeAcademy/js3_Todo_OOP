@@ -23,6 +23,11 @@ export default class State {
     return true;
   }
 
+  resetTodos() {
+    this.currentTodos = [];
+    this.render();
+  }
+
   addTodo(todo) {
     if (todo instanceof Todo) {
       this.currentTodos.push(todo);
